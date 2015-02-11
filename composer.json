@@ -1,0 +1,12 @@
+{
+    "name": "bravo3/srcset",
+    "type": "library",
+    "description": "Custom srcset implementation",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jordon Scott",
+            "email": "jordon@novatek.com.au"
+        }
+    ]
+}
