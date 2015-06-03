@@ -18,7 +18,6 @@ What This Doesn't Do
 --------------------
 * Create a `srcset` polyfill
 * Take a 'sizes' argument
-* Consider the device pixel ratio
 
 Requirements
 ------------
@@ -54,3 +53,17 @@ is resized.
 
 If you load content via an AJAX request, you will want to call `ResponsiveImages.update()`, this will trigger a run of
 the update process which will update your new content.
+
+Restraints for the Device Pixel Ratio
+-------------------------------------
+The pixel ratio is the image dimension coefficient required to get the optimum image size for devices with a high
+pixel density or a browser window that has been zoomed. 
+
+For example, modern mobile devices fake their screen width but offer a pixel ratio (of 2.0 or 3.0, for example). This
+allows you to offer a higher-res image to get the most out of their screen resolution. A desktop browser that is zoomed
+out now requires less pixels to render the image, so you can now offer a lower-res image to complete the request 
+without any loss of quality.
+
+To control this you can set the `min|max_pixel_ratio` properties of the `ResponsiveImages` object. If you're trying to
+optimise bandwidth, you might want to set the `max_pixel_ratio` to a low value (eg 1.0) to offer a practical image
+size instead of transmitting desktop-quality images to physically small devices with very-high-res screens.
